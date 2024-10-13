@@ -1,10 +1,18 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const ebayToken = process.env.EBAY_API_TOKEN; // Usamos la variable de entorno
+  const ebayToken = process.env.EBAY_API_TOKEN; // Token de API de eBay
+  const verificationToken = process.env.VERIFICATION_TOKEN; // Token de verificación
 
-  if (!ebayToken) {
-    return res.status(500).json({ message: 'Token de eBay no configurado' });
+  if (!ebayToken || !verificationToken) {
+    return res.status(500).json({ message: 'Tokens no configurados' });
+  }
+
+  // Verificar si el token de verificación es válido
+  const tokenFromRequest = req.headers['verification-token'];
+
+  if (tokenFromRequest !== verificationToken) {
+    return res.status(403).json({ message: 'Token de verificación inválido' });
   }
 
   const query = req.query.q || ''; // Parámetro de búsqueda
