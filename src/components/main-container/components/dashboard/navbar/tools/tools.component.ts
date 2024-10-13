@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 export class ToolsComponent {
   toolbarTools = [
     { name: 'Search', route: '/search', icon: '/search.svg' },
-    { name: 'Cart', route: '/cart', icon: '/chart.svg' },
+    { name: 'Cart', route: '/cart', icon: '/cart.svg' },
     { name: 'Login', route: '/login', icon: '/user.svg' },
   ];
 }

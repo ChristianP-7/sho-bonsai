@@ -1,0 +1,5 @@
+<div class="bg-black h-4 w-6">
+  @if (items$ | async; as item) { @for (item of item; track item.deals) {
+  {{ item.deals }}
+  }}
+</div>

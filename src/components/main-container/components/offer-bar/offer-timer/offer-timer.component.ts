@@ -13,7 +13,7 @@ import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
 export class OfferTimerComponent {
   countdownConfig: CountdownConfig = {
     leftTime: 35000, // Tiempo en segundos, aquí configurado a 60 segundos
-    format: 'HH:mm:ss',
+    format: 'HH:mm',
     demand: false, // Iniciar automáticamente
   };
 }
