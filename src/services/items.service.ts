@@ -26,8 +26,8 @@ export class ItemsService {
     return this.http.get<ItemSummary>(url);
   }
 
-  getImageThroughProxy(itemUrl: string): Observable<Blob> {
-    const params = new HttpParams().set('imageUrl', itemUrl);
+  getImageThroughProxy(imageUrl: string): Observable<Blob> {
+    const params = new HttpParams().set('imageUrl', imageUrl);
     return this.http.get(this.imageProxyUrl, {
       params,
       responseType: 'blob',
