@@ -1,0 +1,13 @@
+@let itemLocal = item ();
+
+<div>
+  @if(itemLocal) {
+  <h3>{{ itemLocal.title }}</h3>
+  <img
+    [ngSrc]="itemLocal.image.imageUrl"
+    [alt]="itemLocal.title"
+    width="200"
+    height="200"
+  />
+  }
+</div>

@@ -1,0 +1,8 @@
+<div>
+  @if (items$ |async; as items) { @for (item of items; track item.itemId) {
+  @defer(on viewport){
+  <app-item-card [item]="item" />
+  }@placeholder {
+  <div class="placeholder"></div>
+  } } }
+</div>

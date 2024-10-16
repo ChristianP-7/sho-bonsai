@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainContainerComponent } from '../components';
 import { NewArrivalsComponent } from '../components/new-arrivals/new-arrivals.component';
-import { PruebaItemsComponent } from '../components/prueba-items';
+import { ItemsContainerComponent } from '../components/items-container';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { PruebaItemsComponent } from '../components/prueba-items';
     RouterOutlet,
     MainContainerComponent,
     NewArrivalsComponent,
-    PruebaItemsComponent,
+    ItemsContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
