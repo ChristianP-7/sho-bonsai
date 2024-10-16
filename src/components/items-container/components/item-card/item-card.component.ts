@@ -1,6 +1,14 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
 import { ItemSummary } from '../../../../models/item/item.model';
 import { JsonPipe, NgOptimizedImage } from '@angular/common';
+import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
+import { ItemsService } from '../../../../services';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-item-card',
@@ -12,4 +20,26 @@ import { JsonPipe, NgOptimizedImage } from '@angular/common';
 })
 export class ItemCardComponent {
   item = input.required<ItemSummary>();
+
+  private itemsService = inject(ItemsService); // Inyección del servicio
+  private sanitizer = inject(DomSanitizer); // Para sanitizar la URL de la imagen
+
+  imageUrl$: Observable<SafeUrl> | null = null;
+
+  ngOnInit() {
+    // Usar this.item() para obtener el valor del ItemSummary
+    const currentItem = this.item();
+
+    // Si la imagen existe, usar el proxy para cargarla
+    if (currentItem.itemWebUrl) {
+      this.imageUrl$ = this.itemsService
+        .getImageThroughProxy(currentItem.itemWebUrl)
+        .pipe(
+          map((blob) => {
+            const objectURL = URL.createObjectURL(blob);
+            return this.sanitizer.bypassSecurityTrustUrl(objectURL);
+          })
+        );
+    }
+  }
 }
