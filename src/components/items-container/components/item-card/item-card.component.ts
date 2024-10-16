@@ -31,9 +31,9 @@ export class ItemCardComponent {
     const currentItem = this.item();
 
     // Si la imagen existe, usar el proxy para cargarla
-    if (currentItem.itemWebUrl) {
+    if (currentItem.image.imageUrl) {
       this.imageUrl$ = this.itemsService
-        .getImageThroughProxy(currentItem.itemWebUrl)
+        .getImageThroughProxy(currentItem.image.imageUrl)
         .pipe(
           map((blob) => {
             const objectURL = URL.createObjectURL(blob);
