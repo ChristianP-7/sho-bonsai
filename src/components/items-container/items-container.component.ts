@@ -16,5 +16,5 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 export class ItemsContainerComponent {
   private itemsService = inject(ItemsService);
   items$: Observable<ItemSummary[]> =
-    this.itemsService.getItemsByCategory('/181003&limit=3');
+    this.itemsService.getItemsByCategory('181003&limit=3');
 }
