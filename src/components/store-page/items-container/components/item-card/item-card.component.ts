@@ -4,16 +4,16 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { ItemSummary } from '../../../../models/item/item.model';
-import { JsonPipe, NgOptimizedImage } from '@angular/common';
+import { ItemSummary } from '../../../../../models/item/item.model';
+import { JsonPipe, NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
-import { ItemsService } from '../../../../services';
+import { ItemsService } from '../../../../../services';
 import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-item-card',
   standalone: true,
-  imports: [NgOptimizedImage, JsonPipe],
+  imports: [NgOptimizedImage, JsonPipe, TitleCasePipe],
   templateUrl: './item-card.component.html',
   styleUrl: './item-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

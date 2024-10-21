@@ -2,7 +2,7 @@ import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { OfferBarComponent } from './components/offer-bar/offer-bar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BannerComponent } from './components/dashboard/banner/banner.component';
+import { BannerComponent } from './components/dashboard/components/banner/banner.component';
 import { NavbarComponent } from './components';
 
 @Component({

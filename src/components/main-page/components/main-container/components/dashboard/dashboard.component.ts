@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BannerComponent } from './banner/banner.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { NavbarComponent } from './navbar';
-import { StoreBtnComponent } from './store-btn/store-btn.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { NavbarComponent } from './components/navbar';
+import { StoreBtnComponent } from './components/store-btn/store-btn.component';
 
 @Component({
   selector: 'app-dashboard',

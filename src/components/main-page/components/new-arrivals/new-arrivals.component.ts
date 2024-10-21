@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NewArrivalsHeaderComponent } from './new-arrivals-header/new-arrivals-header.component';
 import { CommonModule } from '@angular/common';
-import { ArrivalsContainerComponent } from './arrivals-container';
+import { ArrivalsContainerComponent } from './arrivals.-container';
+import { NewArrivalsHeaderComponent } from './new-arrivals-header';
 
 @Component({
   selector: 'app-new-arrivals',
