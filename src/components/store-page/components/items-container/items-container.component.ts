@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ItemSummary } from '../../../../models/item/item.model';
 import { ItemsService } from '../../../../services';
-import { ItemCardComponent } from './item-card/item-card.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
 import { NavbarComponent } from '../../../main-page/components/main-container/components/dashboard/components/navbar/navbar.component';
 import { OfferBarComponent } from '../../../main-page/components/main-container/components/offer-bar/offer-bar.component';
 

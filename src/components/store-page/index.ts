@@ -1,1 +1,1 @@
-export * from './items-container';
+export * from './components';

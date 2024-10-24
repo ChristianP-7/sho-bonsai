@@ -1,4 +1,30 @@
-<nav class="flex items-center space-x-8 px-10">
+<nav class="flex items-center space-x-8 px-10 relative">
+  <div
+    (mouseenter)="dropdownVisible = true"
+    (mouseleave)="dropdownVisible = false"
+    class="relative"
+  >
+    <div class="pt-7 pb-7 font-sans cursor-pointer hover:text-black list-none">
+      Categories
+    </div>
+    <div
+      *ngIf="dropdownVisible"
+      class="absolute custom-options-style top-full w-36 left-0 text-sm font-sans bg-neutral-300 bg-opacity-30 p-3 shadow-md"
+    >
+      <ul class="list-none">
+        <li class="z-50 pb-3 font-sans hover:text-black">
+          <a routerLink="/store"> Moss</a>
+        </li>
+        <li class="z-50 py-3 font-sans hover:text-black">
+          <a routerLink="/store"> Bonsai Pots</a>
+        </li>
+        <li class="z-50 py-3 font-sans hover:text-black">
+          <a routerLink="/store"> Plants and seeds</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div *ngFor="let option of toolbarOptions">
     <a [routerLink]="option.route" class="font-sans hover:text-black">{{
       option.name

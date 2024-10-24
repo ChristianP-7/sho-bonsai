@@ -1,5 +1,3 @@
-<app-offer-bar />
-<app-navbar class="invert" />
 <div>
   @if (items$ |async; as items) { @for (item of items; track item.itemId) {
   @defer(on viewport){

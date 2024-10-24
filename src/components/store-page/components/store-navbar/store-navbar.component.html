@@ -1,0 +1,18 @@
+<div
+  class="flex sticky top-0 z-10 justify-between items-center px-10 text-white"
+  [ngStyle]="{
+    'background-image': 'url(' + banner + ')',
+    'background-size': '100%',
+    'background-position': 'center -7.5rem',
+    'background-color': 'rgba(0, 0, 0, 0.2)',
+    'background-blend-mode': 'overlay'
+  }"
+>
+  <div class="flex relative items-center">
+    <app-home></app-home>
+    <app-options class="options z-0"></app-options>
+  </div>
+  <div class="flex relative">
+    <app-tools></app-tools>
+  </div>
+</div>
